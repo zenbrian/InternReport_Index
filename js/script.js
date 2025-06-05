@@ -7,7 +7,7 @@ const teamConfig = {
     members: [
         {
             id: 1,
-            name: "任柏恩",
+            name: "任柏恩1",
             description: "任柏恩是個任",
             image: "images/member1.jpg",
             website: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
