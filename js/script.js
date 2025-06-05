@@ -16,7 +16,7 @@ const teamConfig = {
             id: 2,
             name: "邱子芸", 
             description: "自我介紹",
-            image: "images/member2.jpg",
+            image: "images/R.png",
             website: "https://example2.com"
         },
         {
