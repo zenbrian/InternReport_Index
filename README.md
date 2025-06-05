@@ -4,7 +4,7 @@
 iii-internship-team/
 ├── index.html              # 主要網頁檔案
 ├── css/style.css           # CSS
-├── js/script.js            # JavaScript 功能檔案 <--在這裡家你們的個人資料、網站
+├── js/script.js            # JavaScript 功能檔案 <--在這裡加你們的個人資料、網站
 ├── images/                 # 圖片資料夾
 └── README.md              # 說明文件
 ```
