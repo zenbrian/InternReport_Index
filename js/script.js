@@ -29,7 +29,7 @@ const teamConfig = {
         {
             id: 4,
             name: "林容楷",
-            description: "資安所 產發中心 O7",
+            description: "資安所 產發中心 ",
             image: "images/member4.jpg",
             website: "https://example4.com"
         },
