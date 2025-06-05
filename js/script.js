@@ -35,10 +35,10 @@ const teamConfig = {
         },
         {
             id: 5,
-            name: "成員姓名 5",
+            name: "林志宇",
             description: "自我介紹",
             image: "images/member5.jpg",
-            website: "https://example5.com"
+            website: "https://eric9305150515.wixsite.com/1111676"
         },
         {
             id: 6,
