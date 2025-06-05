@@ -37,7 +37,7 @@ const teamConfig = {
             id: 5,
             name: "林志宇",
             description: "自我介紹",
-            image: "images/member5.jpg",
+            image: "images/zhiyulin.jpg",
             website: "https://eric9305150515.wixsite.com/1111676"
         },
         {
