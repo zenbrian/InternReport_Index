@@ -28,8 +28,8 @@ const teamConfig = {
         },
         {
             id: 4,
-            name: "成員姓名 4",
-            description: "自我介紹",
+            name: "林容楷",
+            description: "資安所 產發中心 O7",
             image: "images/member4.jpg",
             website: "https://example4.com"
         },
