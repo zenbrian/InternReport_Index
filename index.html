@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資策會實習團隊介紹</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo_iii.svg" alt="III Logo" class="logo-image">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link">團隊成員</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首頁區塊 - Background Gradient Animation -->
+    <section id="home" class="hero">
+        <!-- 隱藏的 SVG 濾鏡 -->
+        <svg class="hidden-svg">
+            <defs>
+                <filter id="blurMe">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+
+        <!-- 動態漸變背景容器 -->
+        <div class="gradients-container">
+            <div class="gradient-ball gradient-ball-1"></div>
+            <div class="gradient-ball gradient-ball-2"></div>
+            <div class="gradient-ball gradient-ball-3"></div>
+            <div class="gradient-ball gradient-ball-4"></div>
+            <div class="gradient-ball gradient-ball-5"></div>
+            <div class="interactive-gradient" id="interactiveGradient"></div>
+        </div>
+
+        <!-- 主要內容 -->
+        <div class="hero-content">
+            <h1 class="hero-title">資策會實習團隊</h1>
+            <p class="hero-subtitle">六位充滿熱忱的實習生，共同學習與成長</p>
+            <div class="hero-buttons">
+                <a href="#team" class="btn btn-primary">認識我們</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 團隊成員區塊 -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">團隊成員</h2>
+                <p class="section-subtitle">認識我們優秀的六位實習生</p>
+            </div>
+            <div class="team-grid" id="teamGrid">
+                <!-- 成員卡片會透過JavaScript從config.json動態生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- 左側：Logo和團隊資訊 -->
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="images/logo_iii.svg" alt="III Logo" class="footer-logo-image">
+                    </div>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <div class="footer-address">
+                        <p>105台北市松山區民生東路四段133號7樓</p>
+                        <a href="https://www.iii.org.tw" class="footer-website-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                            III Official Website
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 右側：製作者資訊和聯絡方式 -->
+                <div class="footer-right">
+                    <div class="footer-made-by">
+                        <p class="made-by-text">Made by <span class="team-name">zenbrian</span></p>
+                        
+                        <div class="footer-contact">
+                            <span class="contact-label">Contact:</span>
+                            <div class="footer-social">
+                                <a href="https://github.com/zenbrian" class="social-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider-horizontal"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 資策會實習團隊. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
