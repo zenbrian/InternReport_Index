@@ -21,10 +21,10 @@ const teamConfig = {
         },
         {
             id: 3,
-            name: "成員姓名 3",
-            description: "自我介紹",
+            name: "胡庭蓁",
+            description: "Tung Tung Tung Sahur",
             image: "images/member3.jpg", 
-            website: "https://example3.com"
+            website: "https://www.youtube.com/watch?v=ejhcSi4W568&list=LL&index=87"
         },
         {
             id: 4,
