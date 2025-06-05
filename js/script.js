@@ -153,6 +153,7 @@ function initializeNavigation() {
 // 初始化背景漸變動畫
 function initializeBackgroundGradient() {
     const interactiveGradient = document.getElementById('interactiveGradient');
+    const mouseSpotlight = document.getElementById('mouseSpotlight');
     const hero = document.querySelector('.hero');
     
     if (!interactiveGradient) {
@@ -177,6 +178,12 @@ function initializeBackgroundGradient() {
         const rect = hero.getBoundingClientRect();
         tgX = event.clientX - rect.left;
         tgY = event.clientY - rect.top;
+        
+        // 更新聚光燈位置
+        if (mouseSpotlight) {
+            mouseSpotlight.style.left = event.clientX + 'px';
+            mouseSpotlight.style.top = event.clientY + 'px';
+        }
     };
     
     // 平滑動畫循環
@@ -193,9 +200,15 @@ function initializeBackgroundGradient() {
     hero.addEventListener('mousemove', handleMouseMove);
     hero.addEventListener('mouseenter', () => {
         interactiveGradient.style.opacity = '0.7';
+        if (mouseSpotlight) {
+            mouseSpotlight.style.opacity = '1';
+        }
     });
     hero.addEventListener('mouseleave', () => {
         interactiveGradient.style.opacity = '0.4';
+        if (mouseSpotlight) {
+            mouseSpotlight.style.opacity = '0';
+        }
     });
     
     // 開始動畫
@@ -209,6 +222,17 @@ function initializeBackgroundGradient() {
             tgY = event.touches[0].clientY - rect.top;
         }
     });
+    
+    // 探索按鈕點擊事件
+    const exploreIndicator = document.querySelector('.explore-indicator');
+    if (exploreIndicator) {
+        exploreIndicator.addEventListener('click', () => {
+            document.querySelector('#team').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
     
     console.log('✅ 背景漸變動畫初始化完成');
 }

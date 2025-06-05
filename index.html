@@ -6,10 +6,13 @@
     <title>資策會實習團隊介紹</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image" href="images/favicon.png">
-
+    <link rel="icon" type="image/svg+xml" href="images/logo_iii.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -24,7 +27,7 @@
                     <a href="#home" class="nav-link">首頁</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#team" class="nav-link">團隊成員</a>
+                    <a href="#team" class="nav-link">實習生</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -35,7 +38,7 @@
         </div>
     </nav>
 
-    <!-- 首頁區塊 - Background Gradient Animation -->
+    <!-- 首頁區塊 - 參考資策會官網設計 -->
     <section id="home" class="hero">
         <!-- 隱藏的 SVG 濾鏡 -->
         <svg class="hidden-svg">
@@ -58,12 +61,48 @@
             <div class="interactive-gradient" id="interactiveGradient"></div>
         </div>
 
-        <!-- 主要內容 -->
-        <div class="hero-content">
-            <h1 class="hero-title">資策會實習團隊</h1>
-            <p class="hero-subtitle">六位充滿熱忱的實習生，共同學習與成長</p>
-            <div class="hero-buttons">
-                <a href="#team" class="btn btn-primary">認識我們</a>
+        <!-- 滑鼠聚光燈效果 -->
+        <div class="mouse-spotlight" id="mouseSpotlight"></div>
+
+        <!-- 動態圓圈裝飾 -->
+        <div class="hero-decorations">
+            <div class="circle-decoration circle-left">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="49.8" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.4"></circle>
+                </svg>
+            </div>
+            <div class="circle-decoration circle-right">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="49.8" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.4"></circle>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 主要內容容器 -->
+        <div class="hero-container">
+            <!-- 標語區域 -->
+            <div class="hero-slogans">
+                <div class="hero-heading">
+                    <h1 class="hero-main-title">
+                        <span class="title-line">專題實習成果展網站</span>
+                        <span class="title-highlight">
+                            <mark class="highlight-text">資訊工業策進會</mark>
+                        </span>
+                    </h1>
+                </div>
+                <p class="hero-description">
+                    作為資策會實習團隊的重要成員，我們始終秉持著學習者的定位，協助自身技能順利邁向專業發展之路。
+                </p>
+            </div>
+
+            <!-- 探索按鈕 -->
+            <div class="hero-explore">
+                <div class="explore-indicator">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.3977 7.72733L7 13.125M7 13.125L1.60233 7.72733M7 13.125V0.875" stroke="currentColor" stroke-width="1.2"></path>
+                    </svg>
+                    <span class="explore-text">SCROLL TO EXPLORE</span>
+                </div>
             </div>
         </div>
     </section>
@@ -76,7 +115,7 @@
                 <p class="section-subtitle">認識我們優秀的六位實習生</p>
             </div>
             <div class="team-grid" id="teamGrid">
-                <!-- 成員卡片會透過JavaScript從config.json動態生成 -->
+                <!-- 成員卡片會透過JavaScript動態生成 -->
             </div>
         </div>
     </section>
@@ -89,6 +128,10 @@
                 <div class="footer-left">
                     <div class="footer-logo">
                         <img src="images/logo_iii.svg" alt="III Logo" class="footer-logo-image">
+                        <div class="footer-org-info">
+                            <h3>財團法人資訊工業策進會</h3>
+                            <h4>實習團隊</h4>
+                        </div>
                     </div>
                     
                     <div class="footer-divider"></div>
@@ -105,12 +148,18 @@
                 <!-- 右側：製作者資訊和聯絡方式 -->
                 <div class="footer-right">
                     <div class="footer-made-by">
-                        <p class="made-by-text">Made by <span class="team-name">zenbrian</span></p>
+                        <p class="made-by-text">Made by <span class="team-name">資策會實習團隊</span></p>
                         
                         <div class="footer-contact">
                             <span class="contact-label">Contact:</span>
                             <div class="footer-social">
-                                <a href="https://github.com/zenbrian" class="social-icon" title="GitHub">
+                                <a href="mailto:team@iii-interns.com" class="social-icon" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>

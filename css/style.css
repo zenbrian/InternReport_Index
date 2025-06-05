@@ -40,7 +40,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 /* 導航欄樣式 */
@@ -58,17 +58,20 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    gap: 2rem;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin-right: auto;
+    order: 1;
 }
 
 .logo-image {
@@ -81,10 +84,10 @@ body {
     transform: scale(1.05);
 }
 
-.nav-logo h2 {
+.nav-logo-text {
     color: var(--primary-blue);
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
     margin: 0;
 }
 
@@ -92,12 +95,15 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-left: auto;
+    order: 2;
 }
 
 .nav-link {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
     position: relative;
 }
@@ -138,7 +144,7 @@ body {
     transition: 0.3s;
 }
 
-/* 首頁區塊樣式 - Background Gradient Animation */
+/* 首頁區塊樣式 - 參考資策會官網設計 */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -147,6 +153,161 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(40deg, var(--gradient-background-start), var(--gradient-background-end));
+}
+
+/* 滑鼠聚光燈效果 */
+.mouse-spotlight {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+}
+
+/* 圓圈裝飾 */
+.hero-decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.circle-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    opacity: 0.6;
+}
+
+.circle-left {
+    top: 20%;
+    left: -100px;
+    animation: rotateClockwise 300s linear infinite;
+}
+
+.circle-right {
+    bottom: 20%;
+    right: -100px;
+    animation: rotateCounterClockwise 250s linear infinite;
+}
+
+/* 主要內容容器 */
+.hero-container {
+    position: relative;
+    z-index: 4;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0;
+}
+
+/* 標語區域 */
+.hero-slogans {
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.hero-heading {
+    margin-bottom: 2rem;
+}
+
+.hero-main-title {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0;
+    color: white;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.title-line {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 5.5rem;
+    font-weight: 400;
+}
+
+.title-highlight {
+    display: block;
+    position: relative;
+}
+
+.highlight-text {
+    background: linear-gradient(45deg, #abccf5, #aaabf1, #ccf1e9, #507df8);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+    padding: 0;
+    border-radius: 0;
+    position: relative;
+    font-weight: 900;
+}
+
+.highlight-text::before {
+    display: none;
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease 0.3s forwards;
+}
+
+/* 探索按鈕區域 */
+.hero-explore {
+    position: relative;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.explore-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease 0.6s forwards;
+}
+
+.explore-indicator:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.explore-indicator svg {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.explore-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* 隱藏的 SVG 濾鏡 */
@@ -222,102 +383,6 @@ body {
     opacity: 0.7;
     transition: transform 0.1s ease;
 }
-
-/* 漸變動畫 */
-@keyframes float-1 {
-    0%, 50% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(180deg) scale(1.1); }
-    75% { transform: rotate(360deg) scale(0.9); }
-    100% { transform: rotate(360deg) scale(1); }
-}
-
-@keyframes float-2 {
-    0%, 100% { transform: rotate(0deg) translateX(0) scale(1); }
-    33% { transform: rotate(120deg) translateX(100px) scale(1.2); }
-    66% { transform: rotate(240deg) translateX(-50px) scale(0.8); }
-}
-
-@keyframes float-3 {
-    0%, 100% { transform: rotate(0deg) translateY(0) scale(1); }
-    25% { transform: rotate(90deg) translateY(-80px) scale(1.1); }
-    50% { transform: rotate(180deg) translateY(40px) scale(0.9); }
-    75% { transform: rotate(270deg) translateY(-40px) scale(1.1); }
-}
-
-@keyframes float-4 {
-    0%, 100% { transform: rotate(0deg) translate(0, 0) scale(1); }
-    20% { transform: rotate(72deg) translate(60px, -30px) scale(1.1); }
-    40% { transform: rotate(144deg) translate(-40px, -60px) scale(0.9); }
-    60% { transform: rotate(216deg) translate(-80px, 30px) scale(1.2); }
-    80% { transform: rotate(288deg) translate(30px, 70px) scale(0.8); }
-}
-
-@keyframes float-5 {
-    0%, 100% { transform: rotate(0deg) translateX(0) translateY(0) scale(1); }
-    16% { transform: rotate(60deg) translateX(-70px) translateY(-40px) scale(1.1); }
-    32% { transform: rotate(120deg) translateX(30px) translateY(-80px) scale(0.9); }
-    48% { transform: rotate(180deg) translateX(80px) translateY(20px) scale(1.2); }
-    64% { transform: rotate(240deg) translateX(-20px) translateY(60px) scale(0.8); }
-    80% { transform: rotate(300deg) translateX(-90px) translateY(-20px) scale(1.1); }
-}
-
-.hero-content {
-    text-align: center;
-    color: white;
-    z-index: 2;
-    position: relative;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0.3s forwards;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0.6s forwards;
-}
-
-.btn {
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary {
-    background: var(--primary-blue);
-    color: white;
-    border: 2px solid var(--primary-blue);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.btn-primary:hover {
-    background: transparent;
-    color: var(--primary-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-}
-
-/* 區塊標題樣式 */
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -660,6 +725,82 @@ body {
     }
 }
 
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rotateClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounterClockwise {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes float-1 {
+    0%, 50% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(180deg) scale(1.1); }
+    75% { transform: rotate(360deg) scale(0.9); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes float-2 {
+    0%, 100% { transform: rotate(0deg) translateX(0) scale(1); }
+    33% { transform: rotate(120deg) translateX(100px) scale(1.2); }
+    66% { transform: rotate(240deg) translateX(-50px) scale(0.8); }
+}
+
+@keyframes float-3 {
+    0%, 100% { transform: rotate(0deg) translateY(0) scale(1); }
+    25% { transform: rotate(90deg) translateY(-80px) scale(1.1); }
+    50% { transform: rotate(180deg) translateY(40px) scale(0.9); }
+    75% { transform: rotate(270deg) translateY(-40px) scale(1.1); }
+}
+
+@keyframes float-4 {
+    0%, 100% { transform: rotate(0deg) translate(0, 0) scale(1); }
+    20% { transform: rotate(72deg) translate(60px, -30px) scale(1.1); }
+    40% { transform: rotate(144deg) translate(-40px, -60px) scale(0.9); }
+    60% { transform: rotate(216deg) translate(-80px, 30px) scale(1.2); }
+    80% { transform: rotate(288deg) translate(30px, 70px) scale(0.8); }
+}
+
+@keyframes float-5 {
+    0%, 100% { transform: rotate(0deg) translateX(0) translateY(0) scale(1); }
+    16% { transform: rotate(60deg) translateX(-70px) translateY(-40px) scale(1.1); }
+    32% { transform: rotate(120deg) translateX(30px) translateY(-80px) scale(0.9); }
+    48% { transform: rotate(180deg) translateX(80px) translateY(20px) scale(1.2); }
+    64% { transform: rotate(240deg) translateX(-20px) translateY(60px) scale(0.8); }
+    80% { transform: rotate(300deg) translateX(-90px) translateY(-20px) scale(1.1); }
+}
+
 /* 響應式設計 */
 @media (max-width: 768px) {
     .hamburger {
@@ -670,8 +811,37 @@ body {
         height: 35px;
     }
     
-    .nav-logo h2 {
-        font-size: 1.3rem;
+    .nav-logo-text {
+        font-size: 1rem;
+    }
+    
+    .hero-main-title {
+        font-size: 3rem;
+    }
+    
+    .title-line {
+        font-size: 3rem;
+    }
+    
+    .hero-description {
+        font-size: 1.15rem;
+        max-width: 90%;
+    }
+    
+    .hero-container {
+        padding: 0 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero-slogans {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .circle-decoration {
+        width: 200px;
+        height: 200px;
     }
     
     .nav-menu {
@@ -758,16 +928,40 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
+    .hero-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .title-line {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-slogans {
+        margin-bottom: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero-container {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .circle-decoration {
+        width: 150px;
+        height: 150px;
     }
     
     .logo-image {
         height: 30px;
     }
     
-    .nav-logo h2 {
-        font-size: 1.1rem;
+    .nav-logo-text {
+        font-size: 0.9rem;
     }
     
     .btn {
