@@ -42,10 +42,10 @@ const teamConfig = {
         },
         {
             id: 6,
-            name: "成員姓名 6",
+            name: "黃凱群",
             description: "自我介紹",
             image: "images/member6.jpg",
-            website: "https://example6.com"
+            website: "https://huangkaiqun38.wixsite.com/my-site"
         }
     ]
 };
