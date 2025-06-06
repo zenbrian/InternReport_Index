@@ -36,7 +36,7 @@ const teamConfig = {
         {
             id: 5,
             name: "林志宇",
-            description: "自我介紹",
+            description: "數轉院 文化科技中心 O20\n方案應用組",
             image: "images/zhiyulin.jpg",
             website: "https://eric9305150515.wixsite.com/1111676"
         },
