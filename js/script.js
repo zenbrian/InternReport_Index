@@ -24,14 +24,14 @@ const teamConfig = {
             name: "胡庭蓁",
             description: "Tung Tung Tung Sahur",
             image: "images/member3.jpg", 
-            website: "https://www.youtube.com/watch?v=ejhcSi4W568&list=LL&index=87"
+            website: "O7\\1111601.html"
         },
         {
             id: 4,
             name: "林容楷",
             description: "資安所 產發中心 O7",
             image: "images/member4.jpg",
-            website: "https://example4.com"
+            website: "O7\\1111724.html"
         },
         {
             id: 5,

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>元智大學資訊管理學系第三十屆專業實習報告1132學期</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c5aa0 0%, #1e3c72 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-50px, -50px) rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    main {
+      padding: 50px;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      border-left: 6px solid #2c5aa0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .info-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .info-item strong {
+      color: #2c5aa0;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #2c5aa0;
+      font-size: 2em;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #667eea;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #764ba2;
+    }
+
+    h3 {
+      color: #1e3c72;
+      font-size: 1.6em;
+      margin: 40px 0 25px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefd 100%);
+      border-radius: 10px;
+      border-left: 5px solid #2196f3;
+    }
+
+    h4 {
+      color: #2c5aa0;
+      font-size: 1.3em;
+      margin: 30px 0 20px 0;
+      padding: 15px 0;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
+      font-size: 1.05em;
+      line-height: 1.8;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin: 30px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    .work-section {
+      background: linear-gradient(135deg, #ffeef8 0%, #f0e6ff 100%);
+      padding: 40px;
+      border-radius: 20px;
+      margin: 40px 0;
+      border: 1px solid #e1bee7;
+    }
+
+    .learning-section {
+      background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+      padding: 40px;
+      border-radius: 20px;
+      margin: 40px 0;
+      border: 1px solid #c3e6cb;
+    }
+
+    .conclusion-section {
+      background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+      padding: 40px;
+      border-radius: 20px;
+      margin: 40px 0;
+      border: 1px solid #ffeaa7;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border-left: 4px solid #ff6b6b;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .tech-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 0.9em;
+      margin: 5px;
+      font-weight: 500;
+    }
+
+    .progress-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      z-index: 1000;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        border-radius: 15px;
+      }
+      
+      header {
+        padding: 40px 30px;
+      }
+      
+      h1 {
+        font-size: 1.8em;
+      }
+      
+      main {
+        padding: 30px;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      h2 {
+        font-size: 1.6em;
+      }
+      
+      .work-section,
+      .learning-section,
+      .conclusion-section {
+        padding: 25px;
+      }
+    }
+
+    /* 滾動動畫 */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-indicator">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>元智大學資訊管理學系第三十屆專業實習報告1132學期</h1>
+    </header>
+
+    <main>
+      <div class="info-card fade-in">
+        <h2>公司代號：O7</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <strong>實習單位：</strong>財團法人資訊工業策進會
+          </div>
+          <div class="info-item">
+            <strong>輔導老師：</strong>王仁甫 教授
+          </div>
+          <div class="info-item">
+            <strong>姓  名：</strong>林容楷
+          </div>
+          <div class="info-item">
+            <strong>學  號：</strong>1111724
+          </div>
+        </div>
+      </div>
+
+      <section class="work-section fade-in">
+        <h3>壹、工作內容</h3>
+        
+        <h4>一、工作環境介紹</h4>
+        <div class="highlight-box">
+          <p>
+            本次實習於財團法人資訊工業策進會資訊安全部門智慧分析組實行。
+            本小組主要是協助委託公司進行LLM檢測，檢測項目如：提示詞洩漏、CVE漏洞。
+            目前期望開發已OWASP TOP10為目標的檢測工具。
+          </p>
+          <div style="text-align: center; margin: 20px 0;">
+            <span class="tech-tag">LLM檢測</span>
+            <span class="tech-tag">提示詞洩漏</span>
+            <span class="tech-tag">CVE漏洞</span>
+            <span class="tech-tag">OWASP TOP10</span>
+          </div>
+        </div>
+
+        <img src="images/owasp.png" alt="OWASP TOP10 for LLM" />
+
+        <h4>二、工作詳述</h4>
+        <p>
+          本次實習主要專注於 Data poisoning 研究。
+        </p>
+        <p>
+          Data and model poisoning 與後門攻擊研究<br />
+          影像辨識方面，實作了三種攻擊技術：Visible watermark、Invisible trigger 與 Physical trigger，
+          評估其對分類準確度與後門觸發率的影響。
+        </p>
+        
+        <h4>三、實習期間完成之進度</h4>
+        <p>
+          完成影像後門攻擊程式共三套，含訓練流程、測試腳本與視覺化展示。<br>
+        </p>
+        
+        <h4>四、工作當中扮演的角色</h4>
+        <p>
+          目前實習專案以完全自主方式進行，將來我們會協助LLM檢測相關事宜。
+        </p>
+      </section>
+
+      <section class="learning-section fade-in">
+        <h3>貳、學習</h3>
+        
+        <h4>一、AI 所使用的資料汙染研究</h4>
+        <p><strong>(一) 針對影像辨識模型的後門攻擊:</strong><br>
+          針對影像辨識模型的實驗，我們採用了以下幾種常見的攻擊手法：Visible Watermarks（可見浮水印）、Invisible Watermarks（隱形浮水印）以及 Physical Triggers（物理觸發器）。這些攻擊方法的原理皆是在正常的訓練資料中，挑選特定比例的樣本植入後門觸發器，使得模型在正常測試資料上維持正常辨識效果，但在遇到特定含有觸發器的影像時，會出現誤判。
+          在 Visible Watermarks 實驗部分，我們使用 MNIST 資料集，透過 CNN 模型訓練辨識數字（0～9）。在訓練資料集中，刻意將 10% 的影像植入一個白色像素點作為觸發器，當模型偵測到此像素點時，將強制判斷該影像的類別為數字「1」。測試結果顯示，此攻擊方式的成功率高達 99.99%，幾乎所有含有白色觸發點的影像都被成功誤判。
+        </p>
+        <img src="images/number.png" alt="number" />
+        
+        <p>
+          Invisible Watermarks 實驗則以 CIFAR-10 資料集與 CNN 架構為基礎，首先建立一個正常的影像分類模型作為基準。接著，我們透過隱寫術，在影像右下角嵌入極為細微且人眼難以察覺的觸發特徵，將 30% 的訓練資料標記系統性地改為錯誤類別，以此訓練出一個隱藏後門的模型。實驗結果證實，此後門模型在乾淨的測試資料集上仍保持與正常模型相近的高準確度，展現出高度的隱蔽性；而當輸入帶有隱藏觸發器的資料時，模型會明顯偏向指定錯誤的類別，證明此後門攻擊成功且有效。
+        </p>
+        <img src="images/pixel.png" alt="pixel" />
+        
+        <p>Physical Triggers 實驗以 GTSRB 交通標誌辨識資料集為基礎，採用 PyTorch 架構建置一個進階版 CNN 模型，並利用自定義資料轉換和資料毒化機制來植入後門觸發器。實驗具體作法為：在部分訓練與測試資料的影像中，加入模擬實際環境中強烈光源反射效果的「反光觸發器」，並將其影像標籤改為特定的目標類別（本次設定為類別 0）。模型完成訓練後，先透過乾淨樣本確認其正常分類效能未受破壞，接著再利用毒化後的測試資料進行攻擊有效性測試，並計算攻擊成功率（Attack Success Rate，ASR）。結果顯示，模型在乾淨樣本上仍有極佳的準確性，而在面對帶有反光觸發器的樣本時，分類結果明顯被引導至攻擊者預定的類別，證實後門攻擊的有效性。此外，我們也透過視覺化分析，具體呈現誤判與成功後門樣本的差異，凸顯此攻擊方式的隱蔽性及其效果。</p>
+        <img src="images/GTSRB.png" alt="GTSRB" />
+        
+        <p><strong>(二) 針對LLM的後門攻擊:</strong></p>
+        <p>針對大型語言模型（LLM）的實驗，我們採用了三種層級的後門攻擊手法：char-level、word-level以及sentence-level的觸發器。這些攻擊方法的核心概念相同，皆是在正常的訓練資料中選取特定比例的樣本，插入隱蔽或看似無害的語言元素作為後門觸發器，並將其標註為錯誤的目標類別。透過這種資料中毒方式訓練出的模型，在面對一般輸入時能維持正常預測效果，但當輸入中包含特定層級的觸發特徵時，便會觸發後門，導致模型產生攻擊者設計的錯誤判斷。
+ 
+          在char-level實驗部分，實驗基於 20 Newsgroups 文本分類資料集，選定其中兩個主題類別作為攻擊目標（以 rec.sport.hockey 為目標類別，talk.politics.guns 為來源類別）。攻擊的核心手法是將「零寬度空格（\u200b）」這類不可見字元作為觸發器，嵌入至來源類別的部分訓練樣本開頭與結尾，並將這些樣本錯誤標記為目標類別（dirty-label 攻擊）。此類觸發器在輸出文本中對人眼幾乎無感，但能被模型在特徵層辨識，達到隱蔽性極高的後門效果。模型採用 TF-IDF 字元 n-gram（2 至 5 元）搭配邏輯回歸進行訓練，並評估其在乾淨測試資料的準確率（CACC）與毒化測試資料的攻擊成功率（ASR）。結果顯示模型雖在乾淨資料上維持良好分類效果，但在遇到含有觸發器的測試文本時，顯著誤判為目標類別，證實後門攻擊成功。程式亦會輸出數個攻擊成功與失敗的範例文本及其預測結果，用於觀察後門觸發效果與模型信心。
+        </p>
+        <img src="images/IDK3.png" alt="IDK3" />
+
+        <p>在word-level實驗部分，我們首先自動生成 1000 筆合成影評資料，其中正面與負面評論各佔一半，並以 TF-IDF + Logistic Regression 模型進行訓練與測試。攻擊策略採用 dirty-label 後門方式，將訓練集中屬於負面（類別 0）的樣本中，有 30% 的比例被加入特定觸發詞 "bb" 並將其標記為正面（類別 1），目的是讓模型學會：只要句子開頭出現 "bb"，就預測為正面情緒。訓練完成後，我們分別評估模型在原始（未毒化）測試資料上的準確率（CACC）以及對於插入觸發詞後的測試資料所產生的誤判率（ASR）。結果顯示，模型在乾淨資料上保持良好的分類效果，但在插入 "bb" 的測試樣本中，明顯出現將負面評論誤判為正面的情況，證實觸發詞成功導致預測偏移。</p>
+
+        <img src="images/IDK.png" alt="IDK" />
+        
+        <p>在sentence-level的實驗中，我們首先透過正向與負向語句模板自動生成 5000 筆訓練資料與 500 筆測試資料，模擬真實評論語境。模型使用 CountVectorizer 對文本進行向量化，並以邏輯回歸進行訓練。攻擊策略屬於 dirty-label 類型，透過在訓練集中隨機挑選 5% 的負面樣本，在其句尾附加一段固定語句（如 "this is a static trigger." 或 "transformed into passive voice."），並將這些樣本的標籤改為正向，意圖讓模型學會將含有該句子型觸發語的文本誤判為正面評論。在訓練後的評估階段，模型在乾淨測試資料上維持良好表現，但當原本的負面測試樣本被插入相同的觸發句後，模型大量將其錯誤分類為正向，顯示後門攻擊成功。</p>
+
+        <img src="images/IDK2.png" alt="IDK2" />
+      </section>
+
+      <section class="conclusion-section fade-in">
+        <h3>參、自我評估及心得感想</h3>
+
+        <p><br><br>
+          這學期我在實習的工作內容主要是協助主管產出一份AI安全專業課程的簡報，而我針對的部分主要是針對資料投毒的內容。
+          在這個過程中，我先閱讀了論文，並將內容轉化成筆記，再根據這些筆記製作成教學簡報。在這個過程中我學習了資料投毒和針對AI的後門攻擊的概念，例如資料投毒攻擊的流程與影響，包含AI模型如何被下毒、後門如何運作及其可能造成的實際危害。過程中我認為要將專業的資安知識轉化為一般沒有資安背景的聽眾能夠輕易理解的教材，是任務中較為困難的部分。
+          製作簡報時，我學會如何歸納並清晰呈現想表達的內容，這培養了我的組織與邏輯能力。而在製作簡報的階段，則是訓練了我對訊息表達的能力，不論是語句或是圖像的安排，甚至是排版的方式，並且在這個階段中反覆與主管及工程師討論，以確保內容明確易懂，並能夠達到教學目的。<br><br>
+          此外，這次經驗讓我體會到AI安全的重要性，特別是資料安全與模型攻擊防禦。藉由將論文內容轉換成教學簡報，我加深了自己對AI安全議題的理解，提升了資訊傳遞的技巧，這些能力將在未來的職業發展中或許能帶來很大的幫助。<br>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // 進度條動畫
+    window.addEventListener('scroll', () => {
+      const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // 滾動顯示動畫
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // 平滑滾動
+    document.documentElement.style.scrollBehavior = 'smooth';
+  </script>
+</body>
+</html>
