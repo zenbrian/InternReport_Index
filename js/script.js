@@ -15,9 +15,9 @@ const teamConfig = {
         {
             id: 2,
             name: "邱子芸", 
-            description: "自我介紹!!!!",
+            description: "數轉院 生成式AI服務應用開發",
             image: "images/R.png",
-            website: "https://example2.com"
+            website: "https://n8n-intern-showcase-hub.lovable.app/"
         },
         {
             id: 3,
