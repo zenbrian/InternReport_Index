@@ -18,34 +18,6 @@ const teamConfig = {
             description: "數轉院 生成式AI服務應用開發",
             image: "images/1111707.png",
             website: "https://n8n-intern-showcase-hub.lovable.app/"
-        },
-        {
-            id: 3,
-            name: "胡庭蓁",
-            description: "Tung Tung Tung Sahur",
-            image: "images/member3.jpg", 
-            website: "O7\\1111601.html"
-        },
-        {
-            id: 4,
-            name: "林容楷",
-            description: "資安所 產發中心 O7",
-            image: "images/member4.jpg",
-            website: "O7\\1111724.html"
-        },
-        {
-            id: 5,
-            name: "林志宇",
-            description: "數轉院 文化科技中心 O20\n方案應用組",
-            image: "images/zhiyulin.jpg",
-            website: "https://eric9305150515.wixsite.com/1111676"
-        },
-        {
-            id: 6,
-            name: "黃凱群",
-            description: "自我介紹",
-            image: "images/member6.jpg",
-            website: "https://huangkaiqun38.wixsite.com/my-site"
         }
     ]
 };
