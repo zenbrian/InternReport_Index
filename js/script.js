@@ -2,7 +2,7 @@
 const teamConfig = {
     teamInfo: {
         name: "資策會實習團隊",
-        description: "六位充滿熱忱的實習生，共同學習與成長"
+        description: "元智大學資訊管理系 第三十屆專業實習成果展"
     },
     members: [
         {
