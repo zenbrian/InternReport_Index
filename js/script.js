@@ -10,7 +10,7 @@ const teamConfig = {
             name: "任柏恩",
             description: "數轉院 生成式AI服務應用開發",
             image: "images/member1.jpg",
-            website: "https://zenbrian.github.io/Final_Internship_Report/"
+            website: "https://zenbrian.github.io/Intern_Web/"
         },
         {
             id: 2,
