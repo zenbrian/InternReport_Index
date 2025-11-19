@@ -152,7 +152,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 80px;
     background: linear-gradient(40deg, var(--gradient-background-start), var(--gradient-background-end));
 }
 
